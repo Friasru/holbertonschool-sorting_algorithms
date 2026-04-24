@@ -2,7 +2,7 @@
 #include "sort.h"
 
 /**
- * print_array - prints an array of integers using bubble sort
+ * bubble_sort - prints an array of integers using bubble sort
  * @array: The array to sort
  * @size: Number of elements in the array
  */
