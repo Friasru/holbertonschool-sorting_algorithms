@@ -2,21 +2,29 @@
 #include "sort.h"
 
 /**
- * print_array - prints an array of integers
- * @array:
+ * print_array - prints an array of integers using bubble sort
+ * @array: The array to sort
  * @size: Number of elements in the array
  */
-void print_array(const int *array, size_t size)
+void bubble_sort(int *array, size_t size)
 {
-	size_t i;
+	size_t i, j;
+	int temp;
 
-	i = 0;
-	while (array && i < size)
+	if (array == NULL || size < 2)
+		return;
+
+	for (i = 0; i < size - 1; i++)
 	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", array[i]);
-		i++;
+		for (j = 0; j < size - 1 - i; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+				print_array(array, size);
+			}
+		}
 	}
-	printf("\n");
 }
